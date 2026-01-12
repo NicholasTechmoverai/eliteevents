@@ -111,7 +111,7 @@
       </div>
 
       <!-- Event List -->
-      <div data-aos="zoom-in" data-aos-delay="100" class="w-full overflow-auto">
+      <div data-aos="zoom-in" data-aos-delay="100" >
         <EventListing />
       </div>
 

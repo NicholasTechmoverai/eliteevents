@@ -137,6 +137,8 @@ function getRowItems(row: Row<Booking>) {
     <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">
       Recent Event Bookings
     </h3>
+    <div class="overflow-x-auto w-full">
     <UTable :data="data" :columns="columns" class="flex-1" />
+    </div>
   </UPageCard>
 </template>
