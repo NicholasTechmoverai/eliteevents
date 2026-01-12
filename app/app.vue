@@ -12,16 +12,16 @@ useHead({
 })
 const config = useAppConfig()
 
-const title = config.site.name
-const description = config.site.description
+const title = config.site.name || 'Elite Events'
+const description = config.site.description || 'Elite Events - Your Premier Event Planning Partner'
 const toaster = { position: 'top-center' }
 useSeoMeta({
   title,
   description,
   ogTitle: title,
   ogDescription: description,
-  ogImage: '/logo.png',
-  twitterImage: '/logo.png',
+  ogImage: 'https://eliteevents.tera-in.top/_nuxt/photo-1674970538959-e7475d8d376f.Q9JvQUEU.jpeg',
+  twitterImage: 'https://eliteevents.tera-in.top/_nuxt/photo-1674970538959-e7475d8d376f.Q9JvQUEU.jpeg',
   twitterCard: 'summary_large_image'
 })
 </script>
