@@ -5,7 +5,16 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@pinia/nuxt'
   ],
-   nitro: {
+  ui: {
+    colorMode: true 
+  },
+  colorMode: {
+    classSuffix: '',
+    preference: 'light',  // deffault theme
+    fallback: 'light'
+  },
+
+  nitro: {
     preset: 'netlify'
   },
 
