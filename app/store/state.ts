@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import emailjs from '@emailjs/browser'
 
 export interface EventDetails {
   eventCreateDate: string
@@ -111,9 +112,98 @@ export const useEventStore = defineStore('book-event', {
       }
     },
 
-    async submitEvent() {
+    async submitEmailToAdmin() {
       this.event.eventCreateDate = new Date().toISOString()
-      return { ...this.event }
+      const config = useAppConfig()
+
+      const templateParams = {
+        sitename: config.site.name || 'Elite Events',
+        logo: config.site.logo || 'https://eliteevents.tera-in.top/logo.png',
+        email: config.site.email || 'admin.tera-in.top',
+        first_name: this.event.requester.firstName,
+        last_name: this.event.requester.lastName,
+        useremail: this.event.requester.emailAddress,
+        phone: this.event.requester.phoneNumber,
+        category: this.event.category,
+        event_date: this.event.eventDate,
+        location: this.event.eventLocation,
+        guests: this.event.expectedGuests,
+        services: this.event.requiredServices.join(', '),
+        budget: this.event.budgetRange,
+        additional_info: this.event.requester.additionalInfo,
+        eventCreateDate: this.event.eventCreateDate
+      }
+
+      try {
+        const result = await emailjs.send(
+          'service_b0a0wud',
+          'template_fv9a5wg',
+          templateParams,
+          'dvFWzVr_KFS1XtEa5'
+        )
+        console.log('Email sent:', result.text)
+        if (result.status === 200 && result.text === 'OK') {
+          return {
+            message: 'Your event booking request has been submitted successfully!',
+            success: true
+          }
+        }
+      } catch (error) {
+        console.error('EmailJS error:', error)
+        return {
+          message: error.text || 'An error occurred while sending your request. Please try again later.',
+          success: false
+        }
+      }
+    },
+
+    async submitEmailToUser() {
+      this.event.eventCreateDate = new Date().toISOString()
+      const config = useAppConfig()
+
+      const templateParams = {
+        sitename: config.site.name || 'Elite Events',
+        logo: config.site.logo || 'https://eliteevents.tera-in.top/logo.png',
+        first_name: this.event.requester.firstName,
+        last_name: this.event.requester.lastName,
+        email: this.event.requester.emailAddress,
+        phone: this.event.requester.phoneNumber,
+        category: this.event.category,
+        event_date: this.event.eventDate,
+        location: this.event.eventLocation,
+        guests: this.event.expectedGuests,
+        services: this.event.requiredServices.join(', '),
+        budget: this.event.budgetRange,
+        additional_info: this.event.requester.additionalInfo,
+        eventCreateDate: this.event.eventCreateDate
+      }
+
+      try {
+        const result = await emailjs.send(
+          'service_b0a0wud',
+          'template_e02mhrq',
+          templateParams,
+          'dvFWzVr_KFS1XtEa5'
+        )
+        console.log('Email sent:', result.text)
+        if (result.status === 200) {
+          this.$reset()
+          return {
+            message: 'Your event booking request has been submitted successfully!',
+            success: true
+          }
+        }
+      } catch (error) {
+        console.error('EmailJS error:', error)
+        return {
+          message: error.text || 'An error occurred while sending your request. Please try again later.',
+          success: false
+        }
+      }
+    },
+
+    async resetEvent() {
+      this.$reset()
     },
 
     loadDashboardSampleData() {

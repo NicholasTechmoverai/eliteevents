@@ -1,5 +1,5 @@
 const phone = '+254768216484'
-const email = 'info@me.com'
+const email = 'solutionsvibrant2@gmail.com'
 
 export default defineAppConfig({
   ui: {
@@ -11,14 +11,14 @@ export default defineAppConfig({
 
   site: {
     name: 'Elite events',
-    url: 'https://househunter.com',
+    url: 'https://eliteevents.tera-in.top',
+    logo: 'https://eliteevents.tera-in.top/logo.png',
+    sendConfirmEmailToUser: true,
+    email: email,
     tel: phone,
-    email,
     description: 'Streamline your event planning platform  designed  for weddings,corporate events and private parties offering elegant design and seamless booking.',
-    apiBase: 'https://api.tera-in.top',
-    themeColor: '#FF5733',
-    defaultImage: '/logo.png',
-    favicon: '/f_logo.png',
+    keywords: ['event planning', 'weddings', 'corporate events', 'private parties', 'event management', 'event services'],
+
   },
   links: {
     navigation: [

@@ -1,5 +1,6 @@
 <template>
   <div class="space-y-6">
+    <!-- Contact Section Header -->
     <div class="space-y-1">
       <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
         Contact Information
@@ -9,13 +10,19 @@
       </p>
     </div>
 
+    <!-- First and Last Name -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <div class="space-y-2">
         <div class="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300">
           <UIcon name="i-lucide-user" class="size-4 text-primary-500" />
           <span>First Name *</span>
         </div>
-        <UInput v-model="firstName" size="lg" required placeholder="Enter your first name" />
+        <UInput
+          v-model="firstName"
+          size="lg"
+          required
+          placeholder="Enter your first name"
+        />
       </div>
 
       <div class="space-y-2">
@@ -23,10 +30,16 @@
           <UIcon name="i-lucide-user" class="size-4 text-primary-500" />
           <span>Last Name *</span>
         </div>
-        <UInput v-model="lastName" size="lg" required placeholder="Enter your last name" />
+        <UInput
+          v-model="lastName"
+          size="lg"
+          required
+          placeholder="Enter your last name"
+        />
       </div>
     </div>
 
+    <!-- Email with regex validation -->
     <div class="space-y-2 w-full">
       <div class="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300">
         <UIcon name="i-lucide-mail" class="size-4 text-primary-500" />
@@ -38,10 +51,13 @@
         size="lg"
         required
         placeholder="you@example.com"
+        :class="{'border-red-500': emailError}"
         class="w-full"
       />
+      <p v-if="emailError" class="text-red-500 text-sm">Please enter a valid email address</p>
     </div>
 
+    <!-- Phone -->
     <div class="space-y-2 w-full">
       <div class="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300">
         <UIcon name="i-lucide-phone" class="size-4 text-primary-500" />
@@ -57,6 +73,7 @@
       />
     </div>
 
+    <!-- Additional Info -->
     <div class="space-y-2 w-full">
       <div class="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300">
         <UIcon name="i-lucide-message-square" class="size-4 text-primary-500" />
@@ -73,16 +90,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue'
+import { ref, watch, onMounted, computed } from 'vue'
 import { useEventStore } from '~/store/state'
 
 const eventStore = useEventStore()
 
+// Form fields
 const firstName = ref('')
 const lastName = ref('')
 const emailAddress = ref('')
 const phoneNumber = ref('')
 const additionalInfo = ref('')
+
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+const emailError = computed(() => {
+  return emailAddress.value.length > 0 && !emailRegex.test(emailAddress.value)
+})
 
 onMounted(() => {
   const requester = eventStore.event.requester
