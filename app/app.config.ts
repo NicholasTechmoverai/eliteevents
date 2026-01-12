@@ -17,7 +17,7 @@ export default defineAppConfig({
     email: email,
     tel: phone,
     description: 'Streamline your event planning platform  designed  for weddings,corporate events and private parties offering elegant design and seamless booking.',
-    keywords: ['event planning', 'weddings', 'corporate events', 'private parties', 'event management', 'event services'],
+    keywords: ['event planning', 'weddings', 'corporate events', 'private parties', 'event management', 'event services', 'event booking' ,'event coordination' , 'event solutions', 'Elite Events' ],
 
   },
   links: {

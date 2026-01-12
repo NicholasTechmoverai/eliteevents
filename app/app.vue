@@ -1,7 +1,10 @@
 <script setup>
+  const config = useAppConfig()
+
 useHead({
   meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'keywords', content: config.site.keywords } 
   ],
   link: [
     { rel: 'icon', href: '/logo.ico' }
@@ -10,7 +13,6 @@ useHead({
     lang: 'en'
   }
 })
-const config = useAppConfig()
 
 const title = config.site.name || 'Elite Events'
 const description = config.site.description || 'Elite Events - Your Premier Event Planning Partner'
