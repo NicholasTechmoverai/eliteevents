@@ -6,7 +6,7 @@
     class="bg-gray-50 dark:bg-gray-900/50 relative"
   >
 
-    <div class="mb-8 sm:mb-10 sticky top-15 z-999 bg-white/50 dark:bg-gray-800 backdrop-blur-2xl p-4" data-aos="fade-up" data-aos-delay="100">
+    <div class="mb-8 sm:mb-10 sticky top-15 z-999 backdrop-blur-2xl p-4" data-aos="fade-up" data-aos-delay="100">
       <div class="flex flex-wrap gap-2 sm:gap-3 justify-center ">
         <UButton 
           v-for="(category, index) in categories" 
