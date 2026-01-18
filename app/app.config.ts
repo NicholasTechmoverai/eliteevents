@@ -1,4 +1,4 @@
-const phone = '+254786408933'
+const phone = '+254 786 408 933'
 const email = 'solutionsvibrant2@gmail.com'
 
 export default defineAppConfig({
@@ -72,7 +72,7 @@ export default defineAppConfig({
     ],
 
     misc: [
-      { label: 'Whatsapp', icon: 'i-simple-icons-whatsapp', to: `https://wa.me/${phone}` },
+      { label: 'Whatsapp', icon: 'i-simple-icons-whatsapp',     to: `https://wa.me/${phone.replace(/\D/g, '')}` },
       { label: 'instagram', icon: 'i-simple-icons-instagram', to: '/' },
       { label: 'facebook', icon: 'i-simple-icons-facebook', to: '/' },
     ]

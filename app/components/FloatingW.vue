@@ -66,7 +66,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const config = useAppConfig()
 
-const position = ref({ x: 20, y: 20 })
+const position = ref({ x: 50, y: 20 })
 const dragging = ref(false)
 const offset = ref({ x: 0, y: 0 })
 
