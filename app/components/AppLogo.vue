@@ -1,7 +1,7 @@
 <template>
   <component
     :is="as"
-    class="inline-flex items-center select-none"
+    class="inline-flex items-center select-none bg-primary-500/90 rounded"
     :class="wrapperClass"
   >
     <img

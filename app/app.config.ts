@@ -1,4 +1,4 @@
-const phone = '+254768216484'
+const phone = '+254786408933'
 const email = 'solutionsvibrant2@gmail.com'
 
 export default defineAppConfig({
@@ -17,7 +17,7 @@ export default defineAppConfig({
     email: email,
     tel: phone,
     description: 'Streamline your event planning platform  designed  for weddings,corporate events and private parties offering elegant design and seamless booking.',
-    keywords: ['event planning', 'weddings', 'corporate events', 'private parties', 'event management', 'event services', 'event booking' ,'event coordination' , 'event solutions', 'Elite Events' ],
+    keywords: ['event planning', 'weddings', 'corporate events', 'private parties', 'event management', 'event services', 'event booking', 'event coordination', 'event solutions', 'Elite Events'],
 
   },
   links: {
@@ -34,13 +34,11 @@ export default defineAppConfig({
       {
         label: 'Services',
         links: [
-          { label: 'Weddings', to: '/', icon: 'i-heroicons-book-open' },
-          { label: 'Ruracio(Traditional)', to: '/', icon: 'i-heroicons-credit-card' },
-          { label: 'Church Events', to: '/', icon: 'i-heroicons-credit-card' },
-          { label: 'Corporate Events', to: '/', icon: 'i-heroicons-credit-card' },
-          { label: 'Music Performances', to: '/', icon: 'i-heroicons-credit-card' }
-
-
+          { label: 'Weddings', to: '/portfolio?tab=wedding&scroll=0', icon: 'i-heroicons-book-open' },
+          { label: 'Ruracio (Traditional)', to: '/portfolio?tab=traditional&scroll=0', icon: 'i-heroicons-credit-card' },
+          { label: 'Church Events', to: '/portfolio?tab=church&scroll=0', icon: 'i-heroicons-credit-card' },
+          { label: 'Corporate Events', to: '/portfolio?tab=corporate&scroll=0', icon: 'i-heroicons-credit-card' },
+          { label: 'Music Performances', to: '/portfolio?tab=music&scroll=0', icon: 'i-heroicons-credit-card' }
         ]
       },
       {
@@ -48,7 +46,7 @@ export default defineAppConfig({
         links: [
           { label: `${phone}`, to: `tel:${phone}`, icon: 'i-lucide-phone' },
           { label: `${email}`, to: `mailto:${email}`, icon: 'i-lucide-mail' },
-          {label:'Nairobi,Kenya' ,to:'',icon:'i-lucide-map-pin'}
+          { label: 'Nairobi,Kenya', to: '', icon: 'i-lucide-map-pin' }
 
         ]
       }
@@ -74,7 +72,7 @@ export default defineAppConfig({
     ],
 
     misc: [
-      { label: 'Whatsapp', icon: 'i-simple-icons-whatsapp', to: '/' },
+      { label: 'Whatsapp', icon: 'i-simple-icons-whatsapp', to: `https://wa.me/${phone}` },
       { label: 'instagram', icon: 'i-simple-icons-instagram', to: '/' },
       { label: 'facebook', icon: 'i-simple-icons-facebook', to: '/' },
     ]

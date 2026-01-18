@@ -3,10 +3,11 @@
     id="featured-events" 
     title="Featured Events"
     description="A glimpse into the exceptional events we've brought to life" 
-    class="bg-gray-50 dark:bg-gray-900/50"
+    class="bg-gray-50 dark:bg-gray-900/50 relative"
   >
-    <div class="mb-8 sm:mb-10" data-aos="fade-up" data-aos-delay="100">
-      <div class="flex flex-wrap gap-2 sm:gap-3 justify-center">
+
+    <div class="mb-8 sm:mb-10 sticky top-15 z-999 bg-white/50 dark:bg-gray-800 backdrop-blur-2xl p-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="flex flex-wrap gap-2 sm:gap-3 justify-center ">
         <UButton 
           v-for="(category, index) in categories" 
           :key="category.value" 
@@ -17,10 +18,12 @@
           class="min-w-[100px] transition-all duration-300 hover:scale-105"
           :data-aos="'fade-up'"
           :data-aos-delay="100 + index * 100"
-          @click="activeCategory = category.value" 
+          @click="activateCategory(category.value)" 
         />
       </div>
     </div>
+      <div id="top" class="hidden"></div>
+
 
     <div class="transition-all duration-500" data-aos="fade-up" data-aos-delay="500">
       <MasonryGallery 
@@ -55,24 +58,56 @@
 </template>
 
 
-<script lang="ts" setup>
-import { ref, computed } from 'vue'
+<script setup lang="ts">
+import { ref, computed, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
-const categories = [
+type Category =
+  | 'all'
+  | 'wedding'
+  | 'corporate'
+  | 'traditional'
+  | 'private'
+  | 'music'
+  | 'church'
+
+interface CategoryItem {
+  label: string
+  value: Category
+}
+
+interface PortfolioItem {
+  id: number
+  src: string
+  title: string
+  category: Category
+  alt: string
+  description: string
+  venue: string
+  date: string
+  height: string
+}
+
+const categories: CategoryItem[] = [
   { label: 'All Events', value: 'all' },
   { label: 'Weddings', value: 'wedding' },
   { label: 'Corporate', value: 'corporate' },
   { label: 'Traditional', value: 'traditional' },
   { label: 'Private', value: 'private' },
   { label: 'Music', value: 'music' },
-  { label: 'Church', value: 'church' },
+  { label: 'Church', value: 'church' }
 ]
 
-const categoryOptions = categories.filter(cat => cat.value !== 'all')
+const categoryOptions = categories.filter(c => c.value !== 'all')
 
-const activeCategory = ref('all')
+const route = useRoute()
+const router = useRouter()
 
-const portfolioData = ref([
+const activeCategory = ref<Category>(
+  (route.query.tab as Category) || 'all'
+)
+
+const portfolioData = ref<PortfolioItem[]>([
   {
     id: 1,
     src: 'https://images.unsplash.com/photo-1674970538959-e7475d8d376f?w=800&auto=format&fit=crop',
@@ -218,13 +253,49 @@ const portfolioData = ref([
   },
 ])
 
-const filteredPortfolio = computed(() => {
-  return activeCategory.value === 'all'
+const filteredPortfolio = computed(() =>
+  activeCategory.value === 'all'
     ? portfolioData.value
-    : portfolioData.value.filter(event => event.category === activeCategory.value)
-})
-</script>
+    : portfolioData.value.filter(
+        item => item.category === activeCategory.value
+      )
+)
 
+const activateCategory = (category: Category) => {
+  activeCategory.value = category
+  router.replace({
+    query: {
+      ...route.query,
+      tab: category === 'all' ? undefined : category
+    }
+  })
+}
+const scrollToTopIfNeeded = async () => {
+  if (route.query.scroll === '0') {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    await nextTick()
+    const newQuery = { ...route.query }
+    delete newQuery.scroll
+    router.replace({ query: newQuery })
+  }
+}
+
+onMounted(scrollToTopIfNeeded)
+
+watch(() => route.query.scroll, scrollToTopIfNeeded)
+
+watch(
+  () => route.query.tab,
+  tab => {
+    if (typeof tab === 'string') {
+      activeCategory.value = tab as Category
+      scrollToTopIfNeeded()
+    } else {
+      activeCategory.value = 'all'
+    }
+  }
+)
+</script>
 <style>
 .animate-fadeIn {
   animation: fadeIn 0.5s ease;

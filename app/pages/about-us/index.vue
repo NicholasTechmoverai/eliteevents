@@ -135,6 +135,8 @@
 </template>
 
 <script lang="ts" setup>
+  import steveImage from '@/assets/images/953fdfa4-3dff-4888-9d7f-165101676136.jpeg'
+  import timmothyImage from '@/assets/images/Image-293.jpg'
 const teamMembers = ref([
   {
     name: 'Steven Muiruri',
@@ -142,7 +144,7 @@ const teamMembers = ref([
     tel: '0768216484',
     description:
       "With over 15 years of experience in event management, Steven leads our team with vision and passion. His expertise in corporate events has transformed countless organizations' celebrations.",
-    image: 'https://images.unsplash.com/photo-1672685667592-0392f458f46f'
+    image: steveImage
   },
   {
     name: 'Anna Wambui',
@@ -166,7 +168,7 @@ const teamMembers = ref([
     tel: '',
     description:
       "Timmothy's warm personality and exceptional communication skills make every client feel valued. He ensures that your vision is understood and beautifully brought to life.",
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e'
+    image: timmothyImage,
   }
 ])
 

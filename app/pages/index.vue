@@ -2,30 +2,38 @@
   <div>
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0 z-0">
-        <img src="~/assets/images/photo-1674970538959-e7475d8d376f.jpeg" alt="Event planning hero" class="w-full h-full object-cover scale-105" />
+        <img src="~/assets/images/photo-1674970538959-e7475d8d376f.jpeg" alt="Event planning hero"
+          class="w-full h-full object-cover scale-105" />
         <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
       </div>
 
       <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 data-aos="fade-up" data-aos-delay="300" class="text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-          We Plan Moments That Matter
+        <h1 data-aos="fade-up" data-aos-delay="300"
+          class="text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+          Stress-Free Weddings & Unforgettable Events
         </h1>
 
-        <p data-aos="fade-up" data-aos-delay="600" class="text-white/90 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-          From intimate gatherings to grand celebrations, we create unforgettable experiences for every occasion.
+        <p data-aos="fade-up" data-aos-delay="600"
+          class="text-white/90 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          Let us handle every detail while you enjoy your special day
         </p>
 
-        <div data-aos="fade-up" data-aos-delay="900" class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/book-event" class="inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold rounded-xl bg-white text-gray-900 hover:bg-gray-100 hover:shadow-xl transition-all duration-500 ease-out active:scale-[0.98] transform hover:-translate-y-1">
+        <div data-aos="fade-up" data-aos-delay="900"
+          class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/book-event"
+            class="inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold rounded-xl bg-white text-gray-900 hover:bg-gray-100 hover:shadow-xl transition-all duration-500 ease-out active:scale-[0.98] transform hover:-translate-y-1">
             Plan Your Event
-            <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </a>
 
-          <a href="/portfolio" class="inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold rounded-xl border border-white text-white hover:bg-white/10 hover:shadow-lg transition-all duration-500 ease-out active:scale-[0.98] transform hover:-translate-y-1">
+          <a href="/portfolio"
+            class="inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold rounded-xl border border-white text-white hover:bg-white/10 hover:shadow-lg transition-all duration-500 ease-out active:scale-[0.98] transform hover:-translate-y-1">
             View Our Work
-            <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
               <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
               <circle cx="8.5" cy="8.5" r="1.5" />
               <path d="M21 15l-5-5L5 21" />
@@ -35,46 +43,78 @@
       </div>
     </section>
 
-    <UPageSection id="expertise" title="Our Expertise" description="Specialized event planning services tailored to your unique needs.">
+    <div>
+      <Packages />
+    </div>
+
+
+
+    <UPageSection id="expertise" title="Our Expertise"
+      description="Specialized event planning services tailored to your unique needs.">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div v-for="(exp, index) in expertise" :key="index" data-aos="zoom-in" :data-aos-delay="index * 100" class="group rounded-2xl border border-gray-400/30 overflow-hidden transform transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl">
+        <div v-for="(exp, index) in expertise" :key="index" data-aos="zoom-in" :data-aos-delay="index * 100"
+          class="group rounded-2xl border border-gray-400/30 overflow-hidden transform transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl">
           <div class="relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-            <img :src="exp.image" :alt="exp.title" class="w-full h-48 object-cover transform transition-all duration-1000 group-hover:scale-110" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
+            </div>
+            <img :src="exp.image" :alt="exp.title"
+              class="w-full h-48 object-cover transform transition-all duration-1000 group-hover:scale-110" />
           </div>
 
           <div class="p-6 space-y-4">
             <div class="flex items-center gap-3 transform transition-all duration-500 group-hover:translate-x-2">
-              <div class="p-2 rounded-lg bg-primary-50 dark:bg-primary-900/30 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
-                <UIcon :name="exp.icon" class="w-6 h-6 text-primary-600 dark:text-primary-400 transition-all duration-300 group-hover:scale-125" />
+              <div
+                class="p-2 rounded-lg bg-primary-50 dark:bg-primary-900/30 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                <UIcon :name="exp.icon"
+                  class="w-6 h-6 text-primary-600 dark:text-primary-400 transition-all duration-300 group-hover:scale-125" />
               </div>
-              <h4 class="text-lg font-semibold text-gray-900 dark:text-white transition-colors duration-300 group-hover:text-primary">{{ exp.title }}</h4>
+              <h4
+                class="text-lg font-semibold text-gray-900 dark:text-white transition-colors duration-300 group-hover:text-primary">
+                {{ exp.title }}</h4>
             </div>
-            <p class="text-gray-600 dark:text-gray-300 transition-colors duration-500 group-hover:text-gray-700 dark:group-hover:text-gray-200">{{ exp.description }}</p>
+            <p
+              class="text-gray-600 dark:text-gray-300 transition-colors duration-500 group-hover:text-gray-700 dark:group-hover:text-gray-200">
+              {{ exp.description }}</p>
           </div>
         </div>
       </div>
     </UPageSection>
 
-    <UPageSection id="featured-events" title="Featured Events" description="A glimpse into the exceptional events we've brought to life" class="bg-gray-50 dark:bg-gray-900/50">
+    <UPageSection id="featured-events" title="Featured Events"
+      description="A glimpse into the exceptional events we've brought to life" class="bg-gray-50 dark:bg-gray-900/50">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div v-for="(event, index) in featured_events" :key="index" data-aos="fade-up" :data-aos-delay="index * 100 + 300" class="group relative overflow-hidden cursor-pointer transform transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl">
+        <div v-for="(event, index) in featured_events" :key="index" data-aos="fade-up"
+          :data-aos-delay="index * 100 + 300"
+          class="group relative overflow-hidden cursor-pointer transform transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl">
           <div class="relative aspect-[4/5] overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-            <img :src="event.image" :alt="event.title" class="w-full h-full object-cover rounded-lg transform transition-all duration-1000 group-hover:scale-110" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
+            </div>
+            <img :src="event.image" :alt="event.title"
+              class="w-full h-full object-cover rounded-lg transform transition-all duration-1000 group-hover:scale-110" />
 
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-              <div class="transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                <span class="inline-block px-3 py-1 text-xs font-medium bg-white/20 backdrop-blur-sm rounded-full text-white mb-2 transform transition-all duration-300 delay-100 group-hover:translate-y-0">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+              <div
+                class="transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                <span
+                  class="inline-block px-3 py-1 text-xs font-medium bg-white/20 backdrop-blur-sm rounded-full text-white mb-2 transform transition-all duration-300 delay-100 group-hover:translate-y-0">
                   {{ event.category }}
                 </span>
-                <h4 class="text-xl font-bold text-white mb-1 transform transition-all duration-300 delay-150 group-hover:translate-y-0">{{ event.title }}</h4>
-                <p class="text-sm text-white/80 transform transition-all duration-300 delay-200 group-hover:translate-y-0">{{ event.date }}</p>
+                <h4
+                  class="text-xl font-bold text-white mb-1 transform transition-all duration-300 delay-150 group-hover:translate-y-0">
+                  {{ event.title }}</h4>
+                <p
+                  class="text-sm text-white/80 transform transition-all duration-300 delay-200 group-hover:translate-y-0">
+                  {{ event.date }}</p>
               </div>
             </div>
 
-            <div class="absolute top-4 left-4 transform transition-all duration-500 group-hover:translate-y-[-10px] group-hover:opacity-0">
-              <span class="px-3 py-1 text-xs font-medium bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-full text-gray-900 dark:text-white transition-all duration-300">
+            <div
+              class="absolute top-4 left-4 transform transition-all duration-500 group-hover:translate-y-[-10px] group-hover:opacity-0">
+              <span
+                class="px-3 py-1 text-xs font-medium bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-full text-gray-900 dark:text-white transition-all duration-300">
                 {{ event.category }}
               </span>
             </div>
@@ -83,11 +123,16 @@
       </div>
     </UPageSection>
 
-    <UPageCTA 
-      title="Ready to Create Unforgettable Memories?"
-      description="Let's bring your vision to life with our expert event planning services" 
-      variant="subtle" 
-      :links="[
+    <div>
+      <ConfusedPart />
+    </div>
+
+    <div>
+      <ClientStories />
+    </div>
+
+    <UPageCTA data-aos="fade-up" data-aos-delay="300" title="Ready to Create Something Extraordinary?"
+      description="Contact us today and let's start planning your unforgettable event" variant="subtle" :links="[
         {
           label: 'Start Planning Now',
           to: '/book-event',
@@ -104,11 +149,7 @@
           variant: 'outline',
           class: 'dark:border-gray-700 dark:text-white transform transition-all duration-500 hover:-translate-y-1 hover:shadow-lg'
         }
-      ]" 
-      title-class="dark:text-white" 
-      description-class="dark:text-gray-300" 
-      :style="{ animationDelay: '200ms' }"
-    />
+      ]" title-class="dark:text-white" description-class="dark:text-gray-300" :style="{ animationDelay: '200ms' }" />
   </div>
 </template>
 
