@@ -57,7 +57,7 @@ const items = [
                 item: 'basis-[70%] transition-opacity [&:not(.is-snapped)]:opacity-10',
                 dot: 'mt-6 w-4 h-2  [&.is-active]:bg-primary-600',
             }" class="mx-auto max-w-sm">
-                <div data-aos="zoom-in" data-aos-delay="200" class="space-y-4">
+                <div  class="space-y-4">
                     <UUser target="_blank" :name="item.name" :message="item.message"
                         :description="`${'★'.repeat(item.rating) + '☆'.repeat(5 - item.rating)}`" :avatar="{
                             src: item.url
