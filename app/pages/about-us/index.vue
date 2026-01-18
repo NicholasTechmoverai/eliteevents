@@ -84,7 +84,7 @@
           <img
             :src="member.image"
             :alt="member.name"
-            class="w-full h-60 object-cover transform transition-all duration-1000 group-hover:scale-110"
+            class="w-full h-fit object-cover transform transition-all duration-1000 group-hover:scale-110"
           />
           <div class="absolute bottom-4 left-4 right-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100 z-20">
             <div class="bg-black/70 backdrop-blur-sm rounded-lg p-3">

@@ -4,7 +4,7 @@
 
       <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
         <div class="flex items-center gap-3">
-          <AppLogo :size="3" />
+          <AppLogo  size="lg"/>
 
           <div>
             <h2 class="text-xl font-bold text-gray-900 dark:text-white">
