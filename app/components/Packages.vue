@@ -68,7 +68,7 @@
                                     {{ config.site.tel }}
                                 </a>
 
-                                <a :href="`https://wa.me/${config.site.whatsapp}`" target="_blank"
+                                <a :href="`https://wa.me/${config.site.tel}`" target="_blank"
                                     class="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-green-600">
                                     <UIcon name="i-lucide-message-circle" />
                                     WhatsApp

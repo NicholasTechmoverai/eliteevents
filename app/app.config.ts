@@ -1,4 +1,4 @@
-const phone = '+254 786 408 933'
+const phone = '+254786408933'
 const email = 'solutionsvibrant2@gmail.com'
 
 export default defineAppConfig({
@@ -28,7 +28,9 @@ export default defineAppConfig({
           { label: 'Home', to: '/', icon: 'i-heroicons-home-modern' },
           { label: 'Portfolio', to: '/portfolio', icon: 'i-heroicons-key' },
           { label: 'About US', to: '/about-us', icon: 'i-heroicons-arrow-path-rounded-square' },
-          { label: 'Book Event', to: '/book-event', icon: 'i-heroicons-map-pin' }
+          { label: 'Book Event', to: '/book-event', icon: 'i-heroicons-map-pin' },
+          { label: 'Contact', to: '/contact', icon: 'i-heroicons-phone' }
+
         ]
       },
       {
@@ -72,7 +74,7 @@ export default defineAppConfig({
     ],
 
     misc: [
-      { label: 'Whatsapp', icon: 'i-simple-icons-whatsapp',     to: `https://wa.me/${phone.replace(/\D/g, '')}` },
+      { label: 'Whatsapp', icon: 'i-simple-icons-whatsapp', to: `https://wa.me/${phone.replace('+', '')}` },
       { label: 'instagram', icon: 'i-simple-icons-instagram', to: '/' },
       { label: 'facebook', icon: 'i-simple-icons-facebook', to: '/' },
     ]
