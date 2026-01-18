@@ -22,8 +22,6 @@
         />
       </div>
     </div>
-      <div id="top" class="hidden"></div>
-
 
     <div class="transition-all duration-500" data-aos="fade-up" data-aos-delay="500">
       <MasonryGallery 
