@@ -1,13 +1,13 @@
 <template>
   <component
     :is="as"
-    class="inline-flex items-center select-none bg-primary-500/90 rounded"
+    class="inline-flex items-center select-none  rounded"
     :class="wrapperClass"
   >
     <img
       :src="logoImage"
       alt="App logo"
-      class="block object-contain transition-transform duration-300"
+      class="block object-contain transition-transform duration-300 min-w-8"
       :class="imgClass"
     />
   </component>
@@ -32,9 +32,9 @@ const props = withDefaults(
 
 const sizeMap: Record<LogoSize, string> = {
   xs: 'h-6',
-  sm: 'h-8',
-  md: 'h-10',
-  lg: 'h-14'
+  sm: 'h-9',
+  md: 'h-12',
+  lg: 'h-35'
 }
 
 const imgClass = computed(() => sizeMap[props.size])
